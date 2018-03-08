@@ -1,0 +1,26 @@
+[user]
+	name = Jun Gu
+	email = 2dxgujun@gmail.com
+[core]
+  editor = vim
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+[alias]
+  a = add
+  co = checkout
+	ft = fetch
+  cp = cherry-pick
+  s = "status -sb"
+  br = branch
+  logp = "log --pretty='%C(yellow)%h %C(red)%an %C(cyan)%ar %C(white)%s' -10"
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  df = diff
+  dfs = "diff --stat"
+  dc = "difftool --extcmd 'icdiff --line-numbers --highlight'"
+  dt = difftool
+  mt = mergetool
+  gp = "grep -i"
+	

@@ -1,0 +1,57 @@
+# Make shift+arrows, ctrl+arrows etc work in Vim.
+set -g xterm-keys on
+
+# Use vi key bindings
+setw -g mode-keys vi
+set -g status-keys vi
+
+# See if this fixes slow ESC issues
+# http://unix.stackexchange.com/questions/23138/esc-key-causes-a-small-delay-in-terminal-due-to-its-alt-behavior
+set -s escape-time 0
+
+# Add truecolor support
+set-option -ga terminal-overrides ",xterm-246color:Tc"
+# Default terminal is 256 colors
+set -g default-terminal "screen-256color"
+
+# Don't rename window automatically
+set-option -g allow-rename off
+
+# Reload tmux conf
+unbind r
+bind r source-file ~/.tmux.conf
+
+# Status bar styling and content
+set -g status-position bottom
+set -g status-bg green
+set -g status-fg black
+set -g status-left '[#S] '
+set -g status-left-length 25
+set -g status-left-style default
+set -g status-right ' "#{=21:pane_title}" %H:%M %d-%b-%y'
+set -g status-right-length 40
+set -g status-right-style default
+
+# Window status styling
+setw -g window-status-fg default
+setw -g window-status-bg default
+set -g window-status-format '#I:#W#F'
+set -g window-status-current-format '#[bg=colour1,fg=default]#I:#W'
+
+
+# Pane styling
+set -g pane-border-fg white
+set -g pane-active-border-fg blue
+
+# Split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# Switch panes using Alt-arrow
+bind -n M-Left 	select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up 		select-pane -U
+bind -n M-Down 	select-pane -D
+

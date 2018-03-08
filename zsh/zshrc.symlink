@@ -1,0 +1,68 @@
+export DOTFILES=$(cd "$(dirname $0)"; pwd)
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+
+ZSH="$DOTFILES/zsh/.oh-my-zsh"
+ZSH_CUSTOM="$DOTFILES/zsh/custom"
+ZSH_THEME="lambda-mod"
+
+plugins=(
+	git tmux
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+)
+
+# Configure tmux plugin
+export ZSH_TMUX_AUTOSTART=true
+
+# Tmuxinator configuration
+export TMUXINATOR_CONFIG="$DOTFILES/tmux/.tmuxinator"
+
+# Suggestion highlight style
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=100"
+
+source $ZSH/oh-my-zsh.sh
+
+
+# User configuration
+# 
+#
+
+
+export BREW_HOME="$HOME/.linuxbrew"
+export BREW_PATH=$BREW_HOME/bin:$BREW_HOME/sbin
+export BREW_MANPATH=$BREW_HOME/share/man
+
+export PATH=$PATH:$BREW_PATH
+export MANPATH=$MANPATH:$BREW_MANPATH
+
+# Mark up the matching text
+export GREP_OPTIONS="--color=auto"
+
+# Highlight man pages
+[ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
+
+# Find *.zsh files
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# Load path.zsh files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# Load *.zsh but the path.zsh and completion.zsh files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# Load completion.zsh files
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
