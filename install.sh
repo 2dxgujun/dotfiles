@@ -4,20 +4,21 @@ set -e
 
 DOTFILES=$(pwd -P)
 
-if [test -w /home/linuxbrew]; then
+if [ -w /home/linuxbrew ]; then
   BREW_HOME="/home/linuxbrew/.linuxbrew"
 else
   BREW_HOME="~/.linuxbrew"
 fi
+
 PATH="$BREW_HOME/bin:$PATH"
 PATH="$BREW_HOME/Homebrew/Library/Homebrew/vendor/portable-ruby/2.3.3/bin:$PATH"
 
 # Check for Homebrew
-if test ! $(which brew) then
+if [ ! $(which brew) ]; then
   echo "  Installing Homebrew for you."
-  if test "$(uname)" = "Darwin" then
+  if [ "$(uname)" = "Darwin" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux" then
+  elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   fi
 fi
@@ -115,4 +116,4 @@ done
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 
 echo ''
-echo 'Done'
+echo '  Done'
