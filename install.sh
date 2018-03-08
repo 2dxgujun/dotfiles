@@ -24,7 +24,7 @@ if [ ! $(which brew) ]; then
 fi
 
 # Run Homebrew through the Brewfile
-echo "> brew bundle" && brew bundle
+echo "> brew bundle" && brew bundle -v
 
 OVERWRITE_ALL=false
 BACKUP_ALL=false
