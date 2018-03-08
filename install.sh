@@ -2,16 +2,22 @@
 
 set -e
 
-# Check for Homebrew
-if test ! $(which brew)
-then
-  echo "  Installing Homebrew for you."
+DOTFILES=$(pwd -P)
 
-  if test "$(uname)" = "Darwin"
-  then
+if [test -w /home/linuxbrew]; then
+  BREW_HOME="/home/linuxbrew/.linuxbrew"
+else
+  BREW_HOME="~/.linuxbrew"
+fi
+PATH="$BREW_HOME/bin:$PATH"
+PATH="$BREW_HOME/Homebrew/Library/Homebrew/vendor/portable-ruby/2.3.3/bin:$PATH"
+
+# Check for Homebrew
+if test ! $(which brew) then
+  echo "  Installing Homebrew for you."
+  if test "$(uname)" = "Darwin" then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-  then
+  elif test "$(expr substr $(uname -s) 1 5)" = "Linux" then
   	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   fi
 fi
@@ -99,7 +105,7 @@ link_file () {
 }
 
 # Install dotfiles
-for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
 do
   dst="$HOME/.$(basename "${src%.*}")"
   link_file "$src" "$dst"
