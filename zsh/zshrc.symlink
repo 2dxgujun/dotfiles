@@ -2,8 +2,10 @@ export DOTFILES="$HOME/.dotfiles"
 export LANG=en_US.UTF-8
 export EDITOR="vim"
 
-ZSH="$DOTFILES/zsh/.oh-my-zsh"
+export ZSH="$DOTFILES/zsh/.oh-my-zsh"
+
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
+
 ZSH_THEME="lambda-mod"
 
 plugins=(
