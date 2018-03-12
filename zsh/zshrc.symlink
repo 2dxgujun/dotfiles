@@ -44,7 +44,7 @@ export GREP_OPTIONS="--color=auto"
 
 # Find *.zsh files
 typeset -U config_files
-config_files=($DOTFILES/**/*.zsh)
+config_files=($DOTFILES/*/*.zsh)
 
 # Load path.zsh files
 for file in ${(M)config_files:#*/path.zsh}
