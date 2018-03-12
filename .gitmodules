@@ -2,11 +2,11 @@
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "zsh-syntax-highlighting"]
-        path = zsh/custom/plugins/zsh-syntax-highlighting
-        url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	path = zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "zsh-autosuggestions"]
-        path = zsh/custom/plugins/zsh-autosuggestions
-        url = https://github.com/zsh-users/zsh-autosuggestions.git
+	path = zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
@@ -23,23 +23,23 @@
 	path = vim/bundle/vim-one
 	url = https://github.com/rakr/vim-one
 [submodule "vim/bundle/YouCompleteMe"]
-        path = vim/bundle/YouCompleteMe
-        url = https://github.com/Valloric/YouCompleteMe
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim/bundle/delimitMate"]
-        path = vim/bundle/delimitMate
-        url = https://github.com/Raimondi/delimitMate
+	path = vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/vim-argumentative"]
-        path = vim/bundle/vim-argumentative
-        url = https://github.com/PeterRincker/vim-argumentative
+	path = vim/bundle/vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative
 [submodule "vim/bundle/nerdtree"]
-        path = vim/bundle/nerdtree
-        url = https://github.com/scrooloose/nerdtree
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
 [submodule "vim/bundle/vim-nerdtree-syntax-highlight"]
-        path = vim/bundle/vim-nerdtree-syntax-highlight
-        url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+	path = vim/bundle/vim-nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 [submodule "vim/bundle/nerdtree-git-plugin"]
-        path = vim/bundle/nerdtree-git-plugin
-        url = https://github.com/Xuyuanp/nerdtree-git-plugin
+	path = vim/bundle/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
 [submodule "vim/bundle/vim-devicons"]
-        path = vim/bundle/vim-devicons
-        url = https://github.com/ryanoasis/vim-devicons
+	path = vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
