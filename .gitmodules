@@ -5,40 +5,40 @@
 	path = zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
+	path = vim.symlink/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
 [submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
+	path = vim.symlink/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
 [submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+	path = vim.symlink/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "vim/bundle/vim-colorschemes"]
-	path = vim/bundle/vim-colorschemes
+	path = vim.symlink/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes
 [submodule "vim/bundle/vim-one"]
-	path = vim/bundle/vim-one
+	path = vim.symlink/bundle/vim-one
 	url = https://github.com/rakr/vim-one
 [submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
+	path = vim.symlink/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
+	path = vim.symlink/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/vim-argumentative"]
-	path = vim/bundle/vim-argumentative
+	path = vim.symlink/bundle/vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim.symlink/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "vim/bundle/vim-nerdtree-syntax-highlight"]
-	path = vim/bundle/vim-nerdtree-syntax-highlight
+	path = vim.symlink/bundle/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 [submodule "vim/bundle/nerdtree-git-plugin"]
-	path = vim/bundle/nerdtree-git-plugin
+	path = vim.symlink/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
 [submodule "vim/bundle/vim-devicons"]
-	path = vim/bundle/vim-devicons
+	path = vim.symlink/bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
