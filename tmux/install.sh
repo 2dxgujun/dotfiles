@@ -2,5 +2,4 @@
 
 set -e
 
-gem install tmuxiniator
-
+# gem install tmuxiniator
