@@ -1,4 +1,4 @@
-export DOTFILES=$(cd "$(dirname $0)"; pwd)
+export DOTFILES='$HOME/.dotfiles'
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
@@ -30,12 +30,9 @@ source $ZSH/oh-my-zsh.sh
 #
 
 
-export BREW_HOME="$HOME/.linuxbrew"
-export BREW_PATH=$BREW_HOME/bin:$BREW_HOME/sbin
-export BREW_MANPATH=$BREW_HOME/share/man
-
-export PATH=$PATH:$BREW_PATH
-export MANPATH=$MANPATH:$BREW_MANPATH
+export BREW_HOME="/home/linuxbrew/.linuxbrew"
+export PATH="$BREW_HOME/bin:$BREW_HOME/sbin:$PATH"
+export MANPATH="$BREW_HOME/share/man:$MANPATH"
 
 # Mark up the matching text
 export GREP_OPTIONS="--color=auto"
