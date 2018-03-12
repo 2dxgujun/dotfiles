@@ -54,16 +54,13 @@ link_file () {
   local overwrite= backup= skip=
   local action=
 
-  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-  then
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
 
-    if [ "$OVERWRITE_ALL" == "false" ] && [ "$BACKUP_ALL" == "false" ] && [ "$SKIP_ALL" == "false" ]
-    then
+    if [ "$OVERWRITE_ALL" == "false" ] && [ "$BACKUP_ALL" == "false" ] && [ "$SKIP_ALL" == "false" ]; then
 
       local currentSrc="$(readlink $dst)"
 
-      if [ "$currentSrc" == "$src" ]
-      then
+      if [ "$currentSrc" == "$src" ]; then
 
         skip=true;
 
@@ -89,35 +86,29 @@ link_file () {
           * )
             ;;
         esac
-
       fi
-
     fi
 
     overwrite=${overwrite:-$OVERWRITE_ALL}
     backup=${backup:-$BACKUP_ALL}
     skip=${skip:-$SKIP_ALL}
 
-    if [ "$overwrite" == "true" ]
-    then
+    if [ "$overwrite" == "true" ]; then
       rm -rf "$dst"
       success "removed $dst"
     fi
 
-    if [ "$backup" == "true" ]
-    then
+    if [ "$backup" == "true" ]; then
       mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
 
-    if [ "$skip" == "true" ]
-    then
+    if [ "$skip" == "true" ]; then
       success "skipped $src"
     fi
   fi
 
-  if [ "$skip" != "true" ]  # "false" or empty
-  then
+  if [ "$skip" != "true" ]; then # "false" or empty
     ln -s "$1" "$2"
     success "linked $1 to $2"
   fi
