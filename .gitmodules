@@ -1,10 +1,7 @@
-[submodule "oh-my-zsh"]
-	path = zsh/.oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "zsh-syntax-highlighting"]
+[submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh-autosuggestions"]
+[submodule "zsh/custom/plugins/zsh-autosuggestions"]
 	path = zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/Vundle.vim"]
@@ -42,4 +39,7 @@
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
 [submodule "vim/bundle/vim-devicons"]
 	path = vim/bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
