@@ -1,0 +1,3 @@
+source ~/.dotfiles/vim/config/plugins.vim
+source ~/.dotfiles/vim/config/settings.vim
+source ~/.dotfiles/vim/config/mappings.vim
