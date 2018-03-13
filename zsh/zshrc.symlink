@@ -36,21 +36,13 @@ export _Z_DATA="${HOME}/.cache/z/.z"
 
 source $ZSH/oh-my-zsh.sh
 
-
-# User configuration
-# 
 #
-
+# User configuration
+#
 
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
 export PATH="$BREW_HOME/bin:$BREW_HOME/sbin:$PATH"
 export MANPATH="$BREW_HOME/share/man:$MANPATH"
-
-# Supress ~/.lesshst
-export LESSHISTFILE=-
-
-# Highlight man pages
-[ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
 
 # Find *.zsh files
 typeset -U config_files

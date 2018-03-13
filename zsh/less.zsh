@@ -1,8 +1,4 @@
-# Colors for less binary.
-#
-# Source: http://unix.stackexchange.com/a/147
-# More info: http://unix.stackexchange.com/a/108840
-
+# Highlight man pages
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
 export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
 export LESS_TERMCAP_me=$(tput sgr0)
@@ -17,3 +13,6 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export LESS="-iR" # -i turns on "smartcase" search by default
+
+# Supress ~/.lesshst file
+export LESSHISTFILE=-
