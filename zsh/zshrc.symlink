@@ -10,7 +10,7 @@ ZSH_CUSTOM="$DOTFILES/zsh/custom"
 ZSH_THEME="lambda-mod"
 
 plugins=(
-	git tmux
+  git tmux z
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
