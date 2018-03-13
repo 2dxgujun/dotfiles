@@ -43,6 +43,9 @@ export MANPATH="$BREW_HOME/share/man:$MANPATH"
 # Highlight man pages
 [ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
 
+# Supress ~/.lesshst
+LESSHISTFILE=-
+
 # Find *.zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
