@@ -25,8 +25,11 @@ export TMUXINATOR_CONFIG="$DOTFILES/tmux/.tmuxinator"
 # Suggestion highlight style
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=100"
 
-# Set the location of the current completion dump file
+# Change the location of the completion dump file
 export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${HOST}-${ZSH_VERSION}"
+
+# Change the location of the history file
+export HISTFILE="${HOME}/.cache/zsh/.zsh_history"
 
 source $ZSH/oh-my-zsh.sh
 
