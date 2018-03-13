@@ -31,6 +31,9 @@ export ZSH_COMPDUMP="${HOME}/.cache/zsh/.zcompdump-${HOST}-${ZSH_VERSION}"
 # Change the location of the history file
 export HISTFILE="${HOME}/.cache/zsh/.zsh_history"
 
+# Change the .z file location
+export _Z_DATA="${HOME}/.cache/z/.z"
+
 source $ZSH/oh-my-zsh.sh
 
 
