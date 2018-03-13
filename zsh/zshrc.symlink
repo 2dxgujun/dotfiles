@@ -1,5 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export EDITOR="vim"
 
 export ZSH="$DOTFILES/zsh/.oh-my-zsh"
@@ -35,9 +36,6 @@ source $ZSH/oh-my-zsh.sh
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
 export PATH="$BREW_HOME/bin:$BREW_HOME/sbin:$PATH"
 export MANPATH="$BREW_HOME/share/man:$MANPATH"
-
-# Mark up the matching text
-export GREP_OPTIONS="--color=auto"
 
 # Highlight man pages
 [ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
