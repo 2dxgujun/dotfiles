@@ -16,6 +16,7 @@ set showcmd                                     " Show partially typed command s
 set visualbell                                  " Don't beep
 set wildmode=longest,list                       " Autocompleting files: prompt, don't autopick
 set wrap                                        " Soft wrap
+set viminfo+=n~/.cache/vim/viminfo              " Store viminfo to another location
 
 " Indentation
 set expandtab                                   " Replace tabs with spaces
