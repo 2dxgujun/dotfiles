@@ -5,9 +5,17 @@ export EDITOR="vim"
 export DOTFILES="$HOME/.dotfiles"
 export ZSH="$DOTFILES/zsh/.oh-my-zsh"
 
-export BREW_HOME="/home/linuxbrew/.linuxbrew"
-export PATH="$BREW_HOME/bin:$BREW_HOME/sbin:$PATH"
-export MANPATH="$BREW_HOME/share/man:$MANPATH"
+if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+  export BREW_HOME="/home/linuxbrew/.linuxbrew"
+elif [ -d "$HOME/.linuxbrew" ]; then
+  export BREW_HOME="$HOME/.linuxbrew"
+fi
+
+if [ ! -z ${BREW_HOME+x} ]; then
+  export PATH="$BREW_HOME/bin:$BREW_HOME/sbin:$PATH"
+  export MANPATH="$BREW_HOME/share/man:$MANPATH"
+fi
+
 
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 

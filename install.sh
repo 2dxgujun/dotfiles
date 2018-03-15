@@ -4,27 +4,34 @@ DOTFILES=$(pwd -P)
 
 set -e
 
-if [ -w /home/linuxbrew ]; then
-  BREW_HOME="/home/linuxbrew/.linuxbrew"
-else
-  BREW_HOME="~/.linuxbrew"
-fi
+if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+  if [ "$(expr substr $(uname -m) 1 3)" = "x86" ]; then
+    # Check for Homebrew
+    if [ ! $(which brew) ]; then
 
-PATH="$BREW_HOME/bin:$PATH"
-PATH="$BREW_HOME/Homebrew/Library/Homebrew/vendor/portable-ruby/2.3.3/bin:$PATH"
+      echo "  Installing Homebrew for you."
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
-# Check for Homebrew
-if [ ! $(which brew) ]; then
-  echo "  Installing Homebrew for you."
-  if [ "$(uname)" = "Darwin" ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+      if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+        BREW_HOME="/home/linuxbrew/.linuxbrew"
+      else
+        BREW_HOME="$HOME/.linuxbrew"
+      fi
+
+      export PATH="$BREW_HOME/bin:$PATH"
+      
+      # Run Homebrew through the Brewfile
+      echo "> brew bundle" | brew bundle -v
+    fi
+  else
+    # Use apt instead of brew on arm platform
+    sudo apt update | sudo apt upgrade
+    sudo apt install $(awk -F\' '/^brew/{ print $2 }' Brewfile)
   fi
+else 
+  echo "  Currently only support on Linux"
+  exit 0
 fi
-
-# Run Homebrew through the Brewfile
-echo "> brew bundle" && brew bundle -v
 
 OVERWRITE_ALL=false
 BACKUP_ALL=false
