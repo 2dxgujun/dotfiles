@@ -4,6 +4,8 @@ DOTFILES=$(pwd -P)
 
 set -e
 
+echo "Initing submodules" | git submodule update --init
+
 if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   if [ "$(expr substr $(uname -m) 1 3)" = "x86" ]; then
     # Check for Homebrew
