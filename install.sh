@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES=$(pwd -P)
+DOTFILES_PATH=$(pwd -P)
 
 echo "Initing submodules" | git submodule update --init
 
@@ -119,7 +119,7 @@ link_file () {
 }
 
 # Create symbolic link
-for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+for src in $(find -H "$DOTFILES_PATH" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
 do
   dst="$HOME/.$(basename "${src%.*}")"
   link_file "$src" "$dst"

@@ -1,12 +1,6 @@
 #!/usr/bin/env zsh
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    LAMBDACOLOR="blue"
-else
-    LAMBDACOLOR="green"
-fi
-
-local LAMBDA="%(?,%{$fg_bold[$LAMBDACOLOR]%}λ,%{$fg_bold[red]%}λ)"
+local LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
 
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 

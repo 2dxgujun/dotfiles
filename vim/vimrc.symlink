@@ -1,5 +1,5 @@
-set rtp+=~/.dotfiles/vim
+set rtp+=$DOTFILES_PATH/vim
 
-source ~/.dotfiles/vim/config/plugins.vim
-source ~/.dotfiles/vim/config/settings.vim
-source ~/.dotfiles/vim/config/mappings.vim
+source $DOTFILES_PATH/vim/config/plugins.vim
+source $DOTFILES_PATH/vim/config/settings.vim
+source $DOTFILES_PATH/vim/config/mappings.vim

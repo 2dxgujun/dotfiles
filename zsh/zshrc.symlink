@@ -2,8 +2,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR="vim"
 
-export DOTFILES="$HOME/.dotfiles"
-export ZSH="$DOTFILES/zsh/.oh-my-zsh"
+export DOTFILES_PATH="$HOME/.dotfiles"
+export ZSH="$DOTFILES_PATH/zsh/.oh-my-zsh"
 
 if [ -d "/home/linuxbrew/.linuxbrew" ]; then
   export BREW_HOME="/home/linuxbrew/.linuxbrew"
@@ -17,7 +17,7 @@ if [ ! -z ${BREW_HOME+x} ]; then
 fi
 
 
-ZSH_CUSTOM="$DOTFILES/zsh/custom"
+ZSH_CUSTOM="$DOTFILES_PATH/zsh/custom"
 
 ZSH_THEME="lambda-mod"
 
@@ -34,7 +34,7 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 fi
 
 # Tmuxinator configuration
-export TMUXINATOR_CONFIG="$DOTFILES/tmux/.tmuxinator"
+export TMUXINATOR_CONFIG="$DOTFILES_PATH/tmux/.tmuxinator"
 
 # Suggestion highlight style
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=100"
@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Find *.zsh files
 typeset -U config_files
-config_files=($DOTFILES/*/*.zsh)
+config_files=($DOTFILES_PATH/*/*.zsh)
 
 # Load path.zsh files
 for file in ${(M)config_files:#*/path.zsh}
