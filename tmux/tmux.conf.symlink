@@ -59,7 +59,7 @@ bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
-# List of plugins
+# Tmux plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
@@ -67,5 +67,5 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 # Change tpm path
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES_PATH/tmux/plugins"
 
-# Initialize TMUX plugin manager
+# Initialize tmux plugin manager
 run '$DOTFILES_PATH/tmux/plugins/tpm/tpm'
