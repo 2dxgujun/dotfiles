@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DOTFILES=$(pwd -P)
-
 set -e
+
+DOTFILES=$(pwd -P)
 
 echo "Initing submodules" | git submodule update --init
 
@@ -31,19 +31,14 @@ if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     sudo apt install $(awk -F\' '/^brew/{ print $2 }' Brewfile)
   fi
 else 
-  echo "Current only support on Linux"
-  exit 0
+  echo "Skip install bottles, only supported for Linux"
 fi
 
 OVERWRITE_ALL=false
 BACKUP_ALL=false
 SKIP_ALL=false
 
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-user () {
+prompt () {
   printf "\r  [ \033[0;33m??\033[0m ] $1\n"
 }
 
@@ -58,7 +53,7 @@ fail () {
 }
 
 link_file () {
-  local src=$1 dst=$2
+  local src="$1" dst="$2"
 
   local overwrite= backup= skip=
   local action=
@@ -75,7 +70,7 @@ link_file () {
 
       else
 
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        prompt "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
@@ -123,18 +118,17 @@ link_file () {
   fi
 }
 
-# Install dotfiles
+# Create symbolic link
 for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
 do
   dst="$HOME/.$(basename "${src%.*}")"
   link_file "$src" "$dst"
 done
 
-# Find the installers and run them iteratively
-find . -maxdepth 2 -name install.sh ! -path './install.sh' |
-  while read installer ; do
-    sh -c "${installer}"
+# Find the install.sh and run them iteratively
+find . -maxdepth 2 -name 'install.sh' ! -path './install.sh' |
+  while read script ; do
+    sh -c "${script}"
   done
 
-echo ''
 echo 'Done'

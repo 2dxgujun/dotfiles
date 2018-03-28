@@ -29,7 +29,9 @@ plugins=(
 )
 
 # Configure tmux plugin
-export ZSH_TMUX_AUTOSTART=true
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  export ZSH_TMUX_AUTOSTART=true
+fi
 
 # Tmuxinator configuration
 export TMUXINATOR_CONFIG="$DOTFILES/tmux/.tmuxinator"

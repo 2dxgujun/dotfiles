@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 
-local LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    LAMBDACOLOR="red"
+else
+    LAMBDACOLOR="green"
+fi
+
+local LAMBDA="%(?,%{$fg_bold[$LAMBDACOLOR]%}λ,%{$fg_bold[red]%}λ)"
+
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 
 # Git sometimes goes into a detached head state. git_prompt_info doesn't
@@ -53,7 +60,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 
 # Format for git_prompt_ahead()
 ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg_bold[white]%}^"
-
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$fg_bold[white]%}[%{$fg_bold[blue]%}"
