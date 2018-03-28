@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    LAMBDACOLOR="red"
+    LAMBDACOLOR="blue"
 else
     LAMBDACOLOR="green"
 fi
