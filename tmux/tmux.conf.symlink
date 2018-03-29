@@ -26,13 +26,15 @@ unbind r
 bind r source-file ~/.tmux.conf
 
 # Status bar styling and content
+set -g status-interval 5
 set -g status-position bottom
 set -g status-bg green
 set -g status-fg black
 set -g status-left '[#S] '
 set -g status-left-length 25
 set -g status-left-style default
-set -g status-right ' "#{=21:pane_title}" %H:%M %d-%b-%y'
+# set -g status-right ' "#{=21:pane_title}" %H:%M %d-%b-%y'
+set -g status-right "#[fg=green]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 10 -i 5 -m 1 -a 1)#[default]"
 set -g status-right-length 40
 set -g status-right-style default
 
@@ -41,7 +43,6 @@ setw -g window-status-fg default
 setw -g window-status-bg default
 set -g window-status-format '#I:#W#F'
 set -g window-status-current-format '#[bg=colour1,fg=default]#I:#W'
-
 
 # Pane styling
 set -g pane-border-fg white
@@ -64,6 +65,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin '2dxgujun/tmux-host-stats'
 
 # Change resurrect save dir
 set -g @resurrect-dir '~/.cache/tmux/resurrect'
@@ -77,5 +79,9 @@ set -g @continuum-restore 'on'
 # Change tpm path
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES_PATH/tmux/plugins"
 
-# Initialize tmux plugin manager
+# Automatic tpm installation
+if "test ! -d $DOTFILES_PATH/tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm $DOTFILES/tmux/plugins/tpm && $DOTFILES_PATH/tmux/plugins/tpm/bin/install_plugins'"
+
+# Initialize TPM
 run '$DOTFILES_PATH/tmux/plugins/tpm/tpm'
