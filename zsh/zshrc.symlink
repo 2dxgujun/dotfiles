@@ -16,9 +16,7 @@ if [ ! -z ${BREW_HOME+x} ]; then
   export MANPATH="$BREW_HOME/share/man:$MANPATH"
 fi
 
-
 ZSH_CUSTOM="$DOTFILES_PATH/zsh/custom"
-
 ZSH_THEME="lambda-mod"
 
 plugins=(
@@ -50,6 +48,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # User configuration
 #
+
+export PATH="$DOTFILES_PATH/bin:$PATH"
 
 # Find *.zsh files
 typeset -U config_files

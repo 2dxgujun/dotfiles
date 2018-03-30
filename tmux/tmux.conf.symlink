@@ -33,9 +33,8 @@ set -g status-fg black
 set -g status-left '[#S] '
 set -g status-left-length 25
 set -g status-left-style default
-# set -g status-right ' "#{=21:pane_title}" %H:%M %d-%b-%y'
-set -g status-right "#[fg=green]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 10 -i 5 -m 1 -a 1)#[default]"
-set -g status-right-length 40
+set -g status-right '#[default] "#{=21:pane_title}" %H:%M %d-%b'
+set -g status-right-length 60
 set -g status-right-style default
 
 # Window status styling
