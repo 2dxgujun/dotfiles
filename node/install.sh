@@ -2,7 +2,7 @@
 
 set -e
 
-NVM_DIR = "$HOME/.nvm"
+NVM_DIR="$HOME/.nvm"
 
 git clone https://github.com/creationx/nvm.git $NVM_DIR
 
