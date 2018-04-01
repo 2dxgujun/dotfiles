@@ -4,7 +4,7 @@ set -e
 
 DOTFILES_PATH=$(pwd -P)
 
-echo "Initing submodules" | git submodule update --init
+echo "Initing submodules" | git submodule update --init --recursive
 
 if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   if [ "$(expr substr $(uname -m) 1 3)" = "x86" ]; then
