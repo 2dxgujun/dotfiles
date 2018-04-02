@@ -37,8 +37,8 @@ set foldlevel=99
 set history=10000
 
 " Hide away backup and swap files
-set backupdir=./.backup,.,/tmp
-set directory=.,./.backup,/tmp
+set backupdir=$HOME/.cache/vim/backup,.,/tmp
+set directory=$HOME/.cache/vim/backup,.,/tmp
 
 " Reload file without prompt if it has changed on disk
 " Will still prompt if there is unsaved text in the buffer
