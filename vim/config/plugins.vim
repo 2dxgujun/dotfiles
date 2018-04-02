@@ -27,6 +27,10 @@ Plugin 'tpope/vim-fugitive'                 " Git wrapper
 
 Plugin 'ryanoasis/vim-devicons'             " Filetype glyphs/icons, load after other plugins
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 call vundle#end()
 filetype plugin indent on
 
