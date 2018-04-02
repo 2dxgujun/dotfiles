@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-call vundle#begin('~/.dotfiles/vim/bundle')
+set rtp+=$DOTFILES_PATH/vim/bundle/Vundle.vim
+call vundle#begin('$DOTFILES_PATH/vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -12,7 +12,7 @@ Plugin 'pangloss/vim-javascript'            " Syntax highlighting
 " Coding
 Plugin 'PeterRincker/vim-argumentative'     " Manipulating and moving between function arguments
 Plugin 'Raimondi/delimitMate'               " Auto-completion for quotes, parens, brackets, eto
-Plugin 'Valloric/YouCompleteMe'             " The best code completion engine
+Plugin 'Valloric/YouCompleteMe'             " Code completion
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
