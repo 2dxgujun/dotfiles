@@ -78,9 +78,5 @@ set -g @continuum-restore 'on'
 # Change tpm path
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES_PATH/tmux/plugins"
 
-# Automatic tpm installation
-if "test ! -d $DOTFILES_PATH/tmux/plugins/tpm" \
-   "run 'git clone https://github.com/tmux-plugins/tpm $DOTFILES/tmux/plugins/tpm && $DOTFILES_PATH/tmux/plugins/tpm/bin/install_plugins'"
-
 # Initialize TPM
 run '$DOTFILES_PATH/tmux/plugins/tpm/tpm'
