@@ -3,7 +3,7 @@ set encoding=utf-8                              " In case $LANG doesn't have a s
 
 syntax on                                       " Syntax highlighting
 set background=dark                             " Inquiring plugins want to know
-colorscheme one
+colorscheme one-dark
 " set fillchars=vert:\                          " No pipes in vertical split separators
 set laststatus=2                                " Always show status bar
 set listchars=nbsp:·,tab:▸\ ,trail:·            " Configure how invisible appear
@@ -19,9 +19,9 @@ set wrap                                        " Soft wrap
 set viminfo+=n~/.cache/vim/.viminfo             " Store viminfo to another location
 
 " Indentation
+set tabstop=2                                   " Spaces inserted by <Tab>
 set expandtab                                   " Replace tabs with spaces
 set shiftwidth=2                                " Space used for autoindent and commands like >>
-set softtabstop=2                               " Spaces inserted by <Tab>
 
 " Searching
 set gdefault                                    " Global search by default (/g turns it off)

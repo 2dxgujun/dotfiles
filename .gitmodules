@@ -16,9 +16,6 @@
 [submodule "vim/bundle/vim-colorschemes"]
 	path = vim/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes
-[submodule "vim/bundle/vim-one"]
-	path = vim/bundle/vim-one
-	url = https://github.com/rakr/vim-one
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe

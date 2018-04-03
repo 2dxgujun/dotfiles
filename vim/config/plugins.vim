@@ -6,8 +6,7 @@ call vundle#begin('$DOTFILES_PATH/vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Javascript
-Plugin 'pangloss/vim-javascript'            " Syntax highlighting
+Plugin 'pangloss/vim-javascript'            " Javascript syntax highlighting
 
 Plugin 'Valloric/YouCompleteMe'             " Code completion
 
@@ -16,13 +15,10 @@ Plugin 'Raimondi/delimitMate'               " Auto-completion for quotes, parens
 
 Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
 
-" NERDTree
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'                " NERDTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'        " Show git status in NERDTree
 
-" Colorschemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'rakr/vim-one'
+Plugin 'flazz/vim-colorschemes'             " Colorscheme
 
 Plugin 'tpope/vim-fugitive'                 " Git wrapper
 
@@ -43,6 +39,10 @@ filetype plugin indent on
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" ----- Javascript
+
+let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
 
 " ----- Lightline
 
