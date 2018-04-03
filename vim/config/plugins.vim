@@ -9,15 +9,16 @@ Plugin 'VundleVim/Vundle.vim'
 " Javascript
 Plugin 'pangloss/vim-javascript'            " Syntax highlighting
 
-" Coding
+Plugin 'Valloric/YouCompleteMe'             " Code completion
+
 Plugin 'PeterRincker/vim-argumentative'     " Manipulating and moving between function arguments
 Plugin 'Raimondi/delimitMate'               " Auto-completion for quotes, parens, brackets, eto
-Plugin 'Valloric/YouCompleteMe'             " Code completion
+
+Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'        " Show git status in NERDTree
 
 " Colorschemes
 Plugin 'flazz/vim-colorschemes'
@@ -25,7 +26,7 @@ Plugin 'rakr/vim-one'
 
 Plugin 'tpope/vim-fugitive'                 " Git wrapper
 
-Plugin 'ryanoasis/vim-devicons'             " Filetype glyphs/icons, load after other plugins
+Plugin 'itchyny/lightline.vim'              " Lightline
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -43,11 +44,20 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Toggle NERDTree
-map <Leader>n :NERDTreeToggle<CR>
-" Sets the window size when the NERD tree is opened
-let NERDTreeWinSize = 45
+" ----- Lightline
 
-" Close vim if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+set noshowmode " Get rid of mode information
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'subseparator': { 'left': '', 'right': 'ǀ' }
+      \ }
+
+" ----- NERDTree
+
+map <C-n> :NERDTreeToggle<CR>           " Toggle NERDTree
+let NERDTreeWinSize = 45                " Sets the window size when the NERD tree is opened
 
