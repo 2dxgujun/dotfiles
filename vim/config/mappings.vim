@@ -15,3 +15,6 @@ noremap QA :qa<CR>
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+" Redraws the screen and removes any search highlighting
+nnoremap <silent> <leader>c :nohl<CR>

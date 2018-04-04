@@ -46,6 +46,10 @@ filetype plugin indent on
 
 let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
 
+" ------------------------- YouCompleteMe -------------------------
+
+let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 " ------------------------- Lightline -------------------------
 
 set noshowmode " Get rid of mode information
