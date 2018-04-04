@@ -22,6 +22,8 @@ Plugin 'flazz/vim-colorschemes'             " Colorscheme
 
 Plugin 'tpope/vim-fugitive'                 " Git wrapper
 
+Plugin 'majutsushi/tagbar'                  " Tabbar
+
 Plugin 'itchyny/lightline.vim'              " Lightline
 
 " Markdown
@@ -40,24 +42,92 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" ----- Javascript
+" ------------------------- Javascript -------------------------
 
 let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
 
-" ----- Lightline
+" ------------------------- Lightline -------------------------
 
 set noshowmode " Get rid of mode information
+
+func! LightlineMode()
+  return expand('%:t') == '__Tagbar__' ? 'Tagbar' :
+        \ expand('%:t') =~ 'NERD_tree' ? 'NERDTREE' :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunc
+
+func! LightlineFilename()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' :
+        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunc
+
+func! LightlineLineinfo()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' : printf('%d:%d', line('.'), col('.'))
+endfunc
+
+func! LightlinePercent()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' : printf('%d%%', line('.') * 100 / line('$'))
+endfunc
+
+func! LightlineFileformat()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' : &fileformat
+endfunc
+
+func! LightlineFileencoding()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' : (&fenc !=# '' ? &fenc : &enc)
+endfunc
+
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'mode': 'LightlineMode',
+      \   'filename': 'LightlineFilename',
+      \   'lineinfo': 'LightlineLineinfo',
+      \   'percent': 'LightlinePercent',
+      \   'fileformat': 'LightlineFileformat',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'filetype': 'LightlineFiletype'
       \ },
       \ 'subseparator': { 'left': '', 'right': 'ǀ' }
       \ }
 
-" ----- NERDTree
+" ------------------------- CtrlP -------------------------
 
-map <C-n> :NERDTreeToggle<CR>           " Toggle NERDTree
-let NERDTreeWinSize = 45                " Sets the window size when the NERD tree is opened
+let g:ctrlp_buffer_func = {
+    \ 'enter': 'CtrlPBufferEnter',
+    \ 'exit':  'CtrlPBufferExit',
+    \ }
 
+func! CtrlPBufferEnter()
+  set laststatus=0
+endfunc
+
+func! CtrlPBufferExit()
+  set laststatus=2
+endfunc
+
+" ------------------------- NERDTree -------------------------
+
+let NERDTreeWinSize = 31                " Sets the window size when the NERD tree is opened
+" Toggle NERDTree
+noremap <leader>\ :NERDTreeToggle<CR>
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ------------------------- Tagbar -------------------------
+
+let g:tagbar_width = 31
+noremap <leader>[ :TagbarOpen fj<CR>
+noremap <leader>] :TagbarToggle<CR>

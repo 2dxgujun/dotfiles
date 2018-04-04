@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 export NVM_DIR="$HOME/.nvm" && [ ! -d "$NVM_DIR" ] && (
   git clone https://github.com/creationix/nvm.git "$NVM_DIR"

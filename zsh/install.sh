@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 # Make directory for zsh temp files
 mkdir -p $HOME/.cache/zsh

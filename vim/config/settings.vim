@@ -3,7 +3,7 @@ set encoding=utf-8                              " In case $LANG doesn't have a s
 
 syntax on                                       " Syntax highlighting
 set background=dark                             " Inquiring plugins want to know
-colorscheme one-dark
+colorscheme onedark
 " set fillchars=vert:\                          " No pipes in vertical split separators
 set laststatus=2                                " Always show status bar
 set listchars=nbsp:·,tab:▸\ ,trail:·            " Configure how invisible appear

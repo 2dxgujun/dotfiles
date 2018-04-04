@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 DOTFILES_PATH=$(pwd -P)
 
