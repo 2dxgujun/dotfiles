@@ -49,7 +49,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #
 
-source $HOME/.zshrc.local
+if [ -e "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi
 
 export PATH="$DOTFILES_PATH/bin:$PATH"
 

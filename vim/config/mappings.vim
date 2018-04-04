@@ -18,3 +18,9 @@ nnoremap <space> za
 
 " Redraws the screen and removes any search highlighting
 nnoremap <silent> <leader>c :nohl<CR>
+
+" Fix arrow keys that display A B C D on remote shell
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
