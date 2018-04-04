@@ -21,6 +21,9 @@ set -as terminal-overrides ',*:indn@'
 # Don't rename window automatically
 set-option -g allow-rename off
 
+# Maintains a 'gapless' sequence for window numbers
+set-option -g renumber-windows on
+
 # Reload tmux conf
 unbind r
 bind r source-file ~/.tmux.conf

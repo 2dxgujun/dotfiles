@@ -121,13 +121,15 @@ endfunc
 " ------------------------- NERDTree -------------------------
 
 let NERDTreeWinSize = 31                " Sets the window size when the NERD tree is opened
-" Toggle NERDTree
-noremap <leader>\ :NERDTreeToggle<CR>
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+noremap <leader>\ :NERDTreeToggle<CR>
+noremap <leader>[ :NERDTreeFocus<CR>
 
 " ------------------------- Tagbar -------------------------
 
 let g:tagbar_width = 31
-noremap <leader>[ :TagbarOpen fj<CR>
-noremap <leader>] :TagbarToggle<CR>
+
+noremap <leader>] :TagbarOpen fj<CR>
+noremap <leader>]] :TagbarToggle<CR>
