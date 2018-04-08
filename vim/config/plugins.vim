@@ -49,6 +49,15 @@ let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
 " ------------------------- YouCompleteMe -------------------------
 
 let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_warning_symbol = '>'
+let g:ycm_error_symbol = '>>'
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_key_list_stop_completion = ['<Esc>']
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_key_invoke_completion = '<leader><Space>'         " Trigger semantic completion
+"let g:ycm_semantic_triggers = {
+"  \ 'c' : ['->', '.', 're!\w{1}']
+"  \ }                                             " Trigger semantic completion after typing one characters
 
 " ------------------------- Lightline -------------------------
 
