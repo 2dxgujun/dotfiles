@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -xe
+#!/bin/bash -e
 
 # Create directory for .viminfo and backup files
 mkdir -p $HOME/.cache/vim/backup

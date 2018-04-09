@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -e
 
 git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
 	while read path_key path

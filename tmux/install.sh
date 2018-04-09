@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
-set -xe
+# Install tmux plugin
+$DOTFILES_PATH/tmux/plugins/tpm/bin/install_plugins

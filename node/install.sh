@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -xe
+#!/bin/bash -e
 
 NVM_DIR="$HOME/.nvm"
 

@@ -1,0 +1,1 @@
+export PATH="$DOTFILES_PATH/git/git-submodule-tools/bin:$PATH"
