@@ -1,7 +1,7 @@
-set nocompatible
+set rtp+=$DOTFILES_PATH/vim/bundle/Vundle.vim
+
 filetype off
 
-set rtp+=$DOTFILES_PATH/vim/bundle/Vundle.vim
 call vundle#begin('$DOTFILES_PATH/vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
@@ -52,7 +52,7 @@ let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/thir
 let g:ycm_warning_symbol = '>'
 let g:ycm_error_symbol = '>>'
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
-let g:ycm_key_list_stop_completion = ['<Esc>']
+let g:ycm_key_list_stop_completion = ['<C-y>']              " Note <Esc> will break direction key
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<leader><Space>'         " Trigger semantic completion
 "let g:ycm_semantic_triggers = {
