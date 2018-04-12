@@ -5,6 +5,11 @@ syntax on                                       " Syntax highlighting
 set background=dark                             " Inquiring plugins want to know
 colorscheme onedark
 " set fillchars=vert:\                          " No pipes in vertical split separators
+
+" Open new split panes right and bottom
+set splitbelow
+set splitright
+
 set laststatus=2                                " Always show status bar
 set listchars=nbsp:·,tab:▸\ ,trail:·            " Configure how invisible appear
 set list                                        " Show invisibles

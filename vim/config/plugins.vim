@@ -6,7 +6,8 @@ call vundle#begin('$DOTFILES_PATH/vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'pangloss/vim-javascript'            " Javascript syntax highlighting
+Plugin 'pangloss/vim-javascript'            " Syntax highlight for Javascript
+Plugin 'posva/vim-vue'                      " Syntax highlight for Vue.js components
 
 Plugin 'Valloric/YouCompleteMe'             " Code completion
 
@@ -45,6 +46,12 @@ filetype plugin indent on
 " ------------------------- Javascript -------------------------
 
 let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
+
+" --------------------------- Vue.js ---------------------------
+
+au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css     " Syntax highlight for *.wpy
+au BufEnter *.wpy :syntax sync fromstart          " Fix syntax highlighting in *.wpy
+let g:vue_disable_pre_processors=1      " Fix vim slows down when using this plugin
 
 " ------------------------- YouCompleteMe -------------------------
 
