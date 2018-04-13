@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'pangloss/vim-javascript'            " Syntax highlight for Javascript
 Plugin 'posva/vim-vue'                      " Syntax highlight for Vue.js components
+Plugin 'prettier/vim-prettier'              " Javascript code formatter
 
 Plugin 'Valloric/YouCompleteMe'             " Code completion
 
@@ -43,17 +44,28 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" ------------------------- Javascript -------------------------
+" ----------------------- vim-javascript -----------------------
 
 let g:javascript_plugin_jsdoc = 1       " Enable syntax highlighting for JSDocs
 
-" --------------------------- Vue.js ---------------------------
+" ------------------------- vim-vue ----------------------------
 
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css     " Syntax highlight for *.wpy
 au BufEnter *.wpy :syntax sync fromstart          " Fix syntax highlighting in *.wpy
-let g:vue_disable_pre_processors=1      " Fix vim slows down when using this plugin
+let g:vue_disable_pre_processors = 1              " Fix vim slows down when using this plugin
 
-" ------------------------- YouCompleteMe -------------------------
+" ----------------------- vim-prettier -------------------------
+
+nmap <C-_> <Plug>(Prettier)
+imap <C-_> <Plug>(Prettier)i
+let g:prettier#exec_cmd_async = 1                 " Force async
+let g:prettier#quickfix_auto_focus = 0            " Disable auto focus on the quickfix when there are errors
+
+let g:prettier#config#semi = 'false'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#trailing_comma = 'none'
+
+" ----------------------- YouCompleteMe ------------------------
 
 let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
@@ -66,7 +78,7 @@ let g:ycm_key_invoke_completion = '<leader><Space>'         " Trigger semantic c
 "  \ 'c' : ['->', '.', 're!\w{1}']
 "  \ }                                             " Trigger semantic completion after typing one characters
 
-" ------------------------- Lightline -------------------------
+" ------------------------- Lightline ---------------------------
 
 set noshowmode " Get rid of mode information
 
@@ -123,7 +135,7 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': 'ǀ' }
       \ }
 
-" ------------------------- CtrlP -------------------------
+" -------------------------- CtrlP --------------------------
 
 let g:ctrlp_buffer_func = {
     \ 'enter': 'CtrlPBufferEnter',
