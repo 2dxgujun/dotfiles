@@ -53,6 +53,11 @@ if [ -e "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
 
+# DELETE .sudo_as_admin_successful
+if [ -f "$HOME/.sudo_as_admin_successful" ]; then
+  rm "$HOME/.sudo_as_admin_successful"
+fi
+
 export PATH="$DOTFILES_PATH/bin:$PATH"
 
 # Find *.zsh files
