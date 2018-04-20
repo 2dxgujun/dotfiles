@@ -63,7 +63,8 @@ let g:prettier#quickfix_auto_focus = 0            " Disable auto focus on the qu
 
 let g:prettier#config#semi = 'false'
 let g:prettier#config#single_quote = 'true'
-let g:prettier#trailing_comma = 'none'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'none'
 
 " ----------------------- YouCompleteMe ------------------------
 
@@ -71,9 +72,10 @@ let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/thir
 let g:ycm_warning_symbol = '>'
 let g:ycm_error_symbol = '>>'
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
-let g:ycm_key_list_stop_completion = ['<C-y>']              " Note <Esc> will break direction key
+let g:ycm_key_list_stop_completion = ['<C-y>']        " Note <Esc> will break direction key
 let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_key_invoke_completion = '<leader><Space>'         " Trigger semantic completion
+let g:ycm_key_invoke_completion = '<leader><Space>'   " Trigger semantic completion
+let g:ycm_show_diagnostics_ui = 0                     " Turn off diagnostic feature, it's really slow
 "let g:ycm_semantic_triggers = {
 "  \ 'c' : ['->', '.', 're!\w{1}']
 "  \ }                                             " Trigger semantic completion after typing one characters
@@ -83,8 +85,8 @@ let g:ycm_key_invoke_completion = '<leader><Space>'         " Trigger semantic c
 set noshowmode " Get rid of mode information
 
 func! LightlineMode()
-  return expand('%:t') == '__Tagbar__' ? 'Tagbar' :
-        \ expand('%:t') =~ 'NERD_tree' ? 'NERDTREE' :
+  return expand('%:t') == '__Tagbar__' ? 'STRUCTURE' :
+        \ expand('%:t') =~ 'NERD_tree' ? 'FILETREE' :
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunc
 
@@ -92,6 +94,12 @@ func! LightlineFilename()
   return expand('%:t') == '__Tagbar__' ? '' :
         \ expand('%:t') =~ 'NERD_tree' ? '' :
         \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunc
+
+func! LightlineRelativepath()
+  return expand('%:t') == '__Tagbar__' ? '' :
+        \ expand('%:t') =~ 'NERD_tree' ? '' :
+        \ expand('%:t') !=# '' ? expand('%:f') : '[No Name]'
 endfunc
 
 func! LightlineLineinfo()
@@ -126,6 +134,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'mode': 'LightlineMode',
       \   'filename': 'LightlineFilename',
+      \   'relativepath': 'LightlineRelativepath',
       \   'lineinfo': 'LightlineLineinfo',
       \   'percent': 'LightlinePercent',
       \   'fileformat': 'LightlineFileformat',

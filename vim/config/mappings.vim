@@ -24,3 +24,15 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Type ^W++- instead of ^W+^W+^W- to change the window size
+nmap          <C-W>+     <C-W>+<SID>ws
+nmap          <C-W>-     <C-W>-<SID>ws
+nn <script>   <SID>ws+   <C-W>+<SID>ws
+nn <script>   <SID>ws-   <C-W>-<SID>ws
+nmap          <SID>ws    <Nop>
+nmap          <C-W>>     <C-W>><SID>ws
+nmap          <C-W><     <C-W><<SID>ws
+nn <script>   <SID>ws>   <C-W>><SID>ws
+nn <script>   <SID>ws<   <C-W><<SID>ws
+nmap          <SID>ws    <Nop>
