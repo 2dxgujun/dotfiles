@@ -76,9 +76,15 @@ let g:ycm_key_list_stop_completion = ['<C-y>']        " Note <Esc> will break di
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<leader><Space>'   " Trigger semantic completion
 let g:ycm_show_diagnostics_ui = 0                     " Turn off diagnostic feature, it's really slow
-"let g:ycm_semantic_triggers = {
-"  \ 'c' : ['->', '.', 're!\w{1}']
-"  \ }                                             " Trigger semantic completion after typing one characters
+noremap <silent> <F2> :call ToggleYcmAutoTrigger()<CR>
+
+func! ToggleYcmAutoTrigger()
+  if (g:ycm_auto_trigger == 1)
+    let g:ycm_auto_trigger = 0
+  elseif
+    let g:ycm_auto_trigger = 1
+  endif
+endfunc
 
 " ------------------------- Lightline ---------------------------
 
