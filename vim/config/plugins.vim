@@ -81,7 +81,7 @@ noremap <silent> <F2> :call ToggleYcmAutoTrigger()<CR>
 func! ToggleYcmAutoTrigger()
   if (g:ycm_auto_trigger == 1)
     let g:ycm_auto_trigger = 0
-  elseif
+  else
     let g:ycm_auto_trigger = 1
   endif
 endfunc
