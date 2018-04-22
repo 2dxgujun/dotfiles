@@ -12,5 +12,5 @@ if ! type ctags > /dev/null; then
   ./autogen.sh
   ./configure
   make
-  make install
+  sudo make install
 fi

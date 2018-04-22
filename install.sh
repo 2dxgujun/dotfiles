@@ -1,33 +1,14 @@
 #!/bin/bash -e
 
-DOTFILES_PATH=$(pwd -P)
+export DOTFILES_PATH=$(pwd -P)
 
 echo "Initing submodules" | git submodule update --init --recursive
 
 if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  if [ "$(expr substr $(uname -m) 1 3)" = "x86" ]; then
-    # Check for Homebrew
-    if [ ! $(which brew) ]; then
-      echo "Installing Homebrew for you."
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-    fi
-
-    if [ -d "/home/linuxbrew/.linuxbrew" ]; then
-      BREW_HOME="/home/linuxbrew/.linuxbrew"
-    else
-      BREW_HOME="$HOME/.linuxbrew"
-    fi
-
-    export PATH="$BREW_HOME/bin:$PATH"
-    
-    # Run Homebrew through the Brewfile
-    echo "> brew bundle" | brew bundle -v
-  else
     # Use apt instead of brew on arm platform
     echo "apt install"
     sudo apt update
     sudo apt install $(awk -F\' '/^brew/{ print $2 }' Brewfile)
-  fi
 else 
   echo "Skip install bottles, only supported for Linux"
 fi
