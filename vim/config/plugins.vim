@@ -10,6 +10,8 @@ Plugin 'pangloss/vim-javascript'            " Syntax highlight for Javascript
 Plugin 'posva/vim-vue'                      " Syntax highlight for Vue.js components
 Plugin 'prettier/vim-prettier'              " Javascript code formatter
 
+Plugin 'rhysd/vim-clang-format'             " Clang formatter
+
 Plugin 'Valloric/YouCompleteMe'             " Code completion
 
 Plugin 'PeterRincker/vim-argumentative'     " Manipulating and moving between function arguments
@@ -65,6 +67,18 @@ let g:prettier#config#semi = 'false'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#trailing_comma = 'none'
+
+" ---------------------- vim-clang-format ----------------------
+
+let g:clang_format#style_options = {
+    \ "AccessModifierOffset": -4,
+    \ "AllowShortIfStatementsOnASingleLine": "true",
+    \ "AlwaysBreakTemplateDeclarations": "true",
+    \ "Standard": "C++11"
+    \ }
+
+au FileType c,h,cc,cpp nnoremap <C-_> :ClangFormat<CR>
+au FileType c,h,cc,cpp inoremap <C-_> :ClangFormat<CR>i
 
 " ----------------------- YouCompleteMe ------------------------
 
