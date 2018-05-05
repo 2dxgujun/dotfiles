@@ -61,6 +61,12 @@ set -g @continuum-restore 'on'
 set -g @themedir "$DOTFILES_PATH/tmux/themes"
 set -g @theme 'basic'
 
+# Host stats
+set -g @host-stats-scale-max "7"
+set -g @host-stats-scale-char "•"
+set -g @host-stats-scale-left "‹"
+set -g @host-stats-scale-right "›"
+
 # Change tpm path
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES_PATH/tmux/plugins"
 
