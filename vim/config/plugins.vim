@@ -34,6 +34,9 @@ Plugin 'itchyny/lightline.vim'              " Lightline
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" Kotlin
+Plugin 'udalov/kotlin-vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -60,7 +63,7 @@ let g:vue_disable_pre_processors = 1              " Fix vim slows down when usin
 
 nmap <C-_> <Plug>(Prettier)
 imap <C-_> <Plug>(Prettier)i
-let g:prettier#exec_cmd_async = 1                 " Force async
+let g:prettier#exec_cmd_async = 0                 " Vim will crash in large file
 let g:prettier#quickfix_auto_focus = 0            " Disable auto focus on the quickfix when there are errors
 
 let g:prettier#config#semi = 'false'
