@@ -4,6 +4,9 @@
 [submodule "zsh/custom/plugins/zsh-autosuggestions"]
 	path = zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "zsh/custom/plugins/git-open"]
+	path = zsh/custom/plugins/git-open
+	url = https://github.com/paulirish/git-open.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim

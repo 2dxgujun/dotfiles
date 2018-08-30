@@ -24,6 +24,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
+  git-open
 )
 
 # Configure tmux plugin
