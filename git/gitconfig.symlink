@@ -24,3 +24,5 @@
   mt = mergetool
   gp = "grep -i"
 	
+[rerere]
+	enabled = true
