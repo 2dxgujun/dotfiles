@@ -14,3 +14,6 @@ if [ ! -e "$MY_ZSHRC" ]; then
   echo "export DOTFILES=\"$DOTFILES\"" >> $MY_ZSHRC
 fi
 
+if [ -n "$LINUX" ]; then
+  sudo usermod -s $(which zsh) $USER
+fi

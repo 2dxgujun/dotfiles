@@ -2,15 +2,15 @@
 
 export DOTFILES=$(pwd -P)
 
-echo "Initing submodules" | git submodule update --init --recursive
+git submodule update --init --recursive
 
 if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    # Use apt instead of brew on arm platform
-    echo "apt install"
-    sudo apt update
-    sudo apt install $(awk -F\' '/^brew/{ print $2 }' Brewfile)
+  sudo apt update
+  sudo apt install $(awk -F\' '//' Packages)
+  export LINUX=1
 else 
-  echo "Skip install bottles, only supported for Linux"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew bundle
 fi
 
 OVERWRITE_ALL=false
