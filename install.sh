@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-export DOTFILES_PATH=$(pwd -P)
+export DOTFILES=$(pwd -P)
 
 echo "Initing submodules" | git submodule update --init --recursive
 
@@ -98,7 +98,7 @@ link_file () {
 }
 
 # Create symbolic link
-for src in $(find -H "$DOTFILES_PATH" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+for src in $(find -H "$DOTFILES" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
 do
   dst="$HOME/.$(basename "${src%.*}")"
   link_file "$src" "$dst"

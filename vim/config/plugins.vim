@@ -1,8 +1,8 @@
-set rtp+=$DOTFILES_PATH/vim/bundle/Vundle.vim
+set rtp+=$DOTFILES/vim/bundle/Vundle.vim
 
 filetype off
 
-call vundle#begin('$DOTFILES_PATH/vim/bundle')
+call vundle#begin('$DOTFILES/vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -86,7 +86,7 @@ au FileType c,h,cc,cpp inoremap <C-_> :ClangFormat<CR>i
 
 " ----------------------- YouCompleteMe ------------------------
 
-let g:ycm_global_ycm_extra_conf = $DOTFILES_PATH.'/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = $DOTFILES.'/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_warning_symbol = '>'
 let g:ycm_error_symbol = '>>'
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']

@@ -58,7 +58,7 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
 
 # Themes
-set -g @themedir "$DOTFILES_PATH/tmux/themes"
+set -g @themedir "$DOTFILES/tmux/themes"
 set -g @theme 'basic'
 
 # Host stats
@@ -66,9 +66,9 @@ set -g @host-stats-scale-max "7"
 set -g @host-stats-scale-style "dot"
 
 # Change tpm path
-set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES_PATH/tmux/plugins"
+set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES/tmux/plugins"
 
 # Initialize TPM
-run '$DOTFILES_PATH/tmux/plugins/tpm/tpm'
+run '$DOTFILES/tmux/plugins/tpm/tpm'
 
 source-file ~/.tmux.conf.local
