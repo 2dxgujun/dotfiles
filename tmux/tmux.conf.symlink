@@ -63,7 +63,7 @@ set -g @theme 'basic'
 
 # Host stats
 set -g @host-stats-scale-max "7"
-set -g @host-stats-scale-style "dot"
+set -g @host-stats-scale-style "bar"
 
 # Change tpm path
 set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES/tmux/plugins"
