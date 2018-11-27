@@ -71,4 +71,4 @@ set-environment -g TMUX_PLUGIN_MANAGER_PATH "$DOTFILES/tmux/plugins"
 # Initialize TPM
 run '$DOTFILES/tmux/plugins/tpm/tpm'
 
-source-file ~/.tmux.conf.local
+source-file ~/.mytmux.conf

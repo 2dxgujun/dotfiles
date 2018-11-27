@@ -5,3 +5,4 @@ vim
 cmake
 dh-autoreconf
 pkg-config
+bc
