@@ -9,7 +9,6 @@ if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
   sudo apt install $(awk -F\' '//' Packages)
   export LINUX=1
 else 
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew bundle
 fi
 

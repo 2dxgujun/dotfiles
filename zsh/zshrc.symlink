@@ -1,3 +1,4 @@
+export PATH=/usr/local/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR="vim"
@@ -19,7 +20,6 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  git-open
 )
 
 # Configure tmux plugin
@@ -45,8 +45,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f "$HOME/.sudo_as_admin_successful" ]; then
   rm "$HOME/.sudo_as_admin_successful"
 fi
-
-PATH="$DOTFILES/bin:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
