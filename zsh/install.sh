@@ -8,10 +8,10 @@ mkdir -p $HOME/.cache/z
 
 DOTFILES="$( cd "$(dirname "$1")" ; pwd -P )"
 
-MY_ZSHRC="$HOME/.myzshrc"
+LOCAL_ZSHRC="$HOME/.zshrc.local"
 
-if [ ! -e "$MY_ZSHRC" ]; then
-  echo "export DOTFILES=\"$DOTFILES\"" >> $MY_ZSHRC
+if [ ! -e "$LOCAL_ZSHRC" ]; then
+  echo "export DOTFILES=\"$DOTFILES\"" >> $LOCAL_ZSHRC
 fi
 
 if [ -n "$LINUX" ]; then

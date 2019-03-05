@@ -3,8 +3,8 @@
 # Install tmux plugin
 $DOTFILES/tmux/plugins/tpm/bin/install_plugins
 
-MY_TMUXCONF="$HOME/.mytmux.conf"
+LOCAL_TMUXCONF="$HOME/.tmux.conf.local"
 
-if [ ! -e "$MY_TMUXCONF" ]; then
-  touch $MY_TMUXCONF
+if [ ! -e "$LOCAL_TMUXCONF" ]; then
+  touch $LOCAL_TMUXCONF
 fi

@@ -3,11 +3,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR="vim"
 
-export ZSHRC_USER="$HOME/.myzshrc"
+export LOCAL_ZSHRC="$HOME/.zshrc.local"
 
 # User configuration
-if [ -e "$ZSHRC_USER" ]; then
-  source "$ZSHRC_USER"
+if [ -e "$LOCAL_ZSHRC" ]; then
+  source "$LOCAL_ZSHRC"
 fi
 
 export ZSH="$DOTFILES/zsh/.oh-my-zsh"
