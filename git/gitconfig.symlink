@@ -1,13 +1,15 @@
-[user]
-	name = Jun Gu
-	email = 2dxgujun@gmail.com
+[include]
+  path = ~/.mygitconfig
+
 [core]
   editor = vim
+
 [color]
   ui = true
   diff = auto
   status = auto
   branch = auto
+
 [alias]
   a = add
   co = checkout
