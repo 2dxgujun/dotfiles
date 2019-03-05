@@ -22,7 +22,7 @@ Plugin 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc 
 Plugin 'scrooloose/nerdtree'                " NERDTree
 Plugin 'Xuyuanp/nerdtree-git-plugin'        " Show git status in NERDTree
 
-Plugin 'flazz/vim-colorschemes'             " Colorscheme
+Plugin '2dxgujun/vim-colorschemes'          " Colorscheme
 
 Plugin 'tpope/vim-fugitive'                 " Git wrapper
 
@@ -34,8 +34,9 @@ Plugin 'itchyny/lightline.vim'              " Lightline
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" Kotlin
-Plugin 'udalov/kotlin-vim'
+Plugin 'udalov/kotlin-vim'                  " Kotlin
+
+Plugin 'dart-lang/dart-vim-plugin'          " Syntax highlighting for Dart
 
 call vundle#end()
 filetype plugin indent on

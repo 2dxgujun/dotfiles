@@ -15,3 +15,7 @@ if ! type ctags > /dev/null; then
   make
   sudo make install
 fi
+
+# Compile YCM
+cd $DOTFILES/vim/bundle/YouCompleteMe
+./install.py

@@ -3,6 +3,8 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "jesseduffield/lazygit"
+# Search tool like grep, but optimized for programmers
+brew "ack"
 # Cross-platform make
 brew "cmake"
 # Colored logcat script to show entries only for specified app
