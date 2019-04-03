@@ -19,7 +19,7 @@ plugins=(
   git tmux z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-history-substring-search
+  history-substring-search
 )
 
 # Configure tmux plugin
