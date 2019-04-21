@@ -4,12 +4,17 @@ export DOTFILES=$(pwd -P)
 
 git submodule update --init --recursive
 
-if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  export OS="Darwin"
+else
+  export OS="Linux"
+fi
+
+if [[ "$OS" == "Darwin" ]]; then
+  brew bundle
+else 
   sudo apt update
   sudo apt install $(awk -F\' '//' Packages)
-  export LINUX=1
-else 
-  brew bundle
 fi
 
 OVERWRITE_ALL=false

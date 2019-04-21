@@ -14,6 +14,6 @@ if [ ! -e "$LOCAL_ZSHRC" ]; then
   echo "export DOTFILES=\"$DOTFILES\"" >> $LOCAL_ZSHRC
 fi
 
-if [ -n "$LINUX" ]; then
+if [ "$OS" == "Linux" ]; then
   sudo usermod -s $(which zsh) $USER
 fi
