@@ -14,6 +14,9 @@ set-option -ga terminal-overrides ",xterm-256color:Tc"
 # Default terminal is 256 colors
 # ANSI color works properly
 set -g default-terminal "xterm-256color"
+# Set xterm-256color will disable Home and End, so we manually bind the keys
+bind -n End send-key C-e
+bind -n Home send-key C-a
 
 # Fix 'clear'/'ctrl-l' not work
 # See https://github.com/tmux/tmux/issues/1235
