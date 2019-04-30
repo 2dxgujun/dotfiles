@@ -38,6 +38,8 @@ Plugin 'udalov/kotlin-vim'                  " Kotlin
 
 Plugin 'dart-lang/dart-vim-plugin'          " Syntax highlighting for Dart
 
+Plugin 'previm/previm'                      " Vim plugin for preview
+
 call vundle#end()
 filetype plugin indent on
 
@@ -199,3 +201,7 @@ let g:tagbar_width = 31
 
 noremap <leader>] :TagbarOpen fj<CR>
 noremap <leader>]] :TagbarToggle<CR>
+
+" ------------------------- previm ---------------------------
+
+let g:previm_open_cmd = 'open -a Google\ Chrome'
