@@ -18,8 +18,6 @@ brew "pidcat"
 brew "pkg-config"
 # Web caching proxy
 brew "polipo"
-# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
-brew "prettier"
 # Display and control your Android device
 brew "scrcpy"
 # Simplified and community-driven man pages
