@@ -36,3 +36,11 @@ nmap          <C-W><     <C-W><<SID>ws
 nn <script>   <SID>ws>   <C-W>><SID>ws
 nn <script>   <SID>ws<   <C-W><<SID>ws
 nmap          <SID>ws    <Nop>
+
+" Map Home/End key since we set TERM=xterm-256color
+map  <C-A> <Home>
+imap <C-A> <Home>
+vmap <C-A> <Home>
+map  <C-E> <End>
+imap <C-E> <End>
+vmap <C-E> <End>
