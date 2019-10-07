@@ -20,7 +20,7 @@ set -g window-status-current-format " #I:#W"
 set -g window-status-style fg=white,bg=default
 
 # Current window status
-set -g window-status-current-style fg=green,bg=default,bright
+set -g window-status-current-style fg=green,bg=default
 
 # Window separator
 set -g window-status-separator ""
