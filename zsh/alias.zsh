@@ -13,3 +13,5 @@ GREP_OPTIONS="--color=auto"
 alias grep="grep $GREP_OPTIONS"
 
 alias lg="lazygit"
+alias adbtop="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
+alias typora="open -a typora"
