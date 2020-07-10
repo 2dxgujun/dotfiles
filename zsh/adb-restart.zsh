@@ -36,10 +36,10 @@ Usage:
   fi
 
   if [[ $CLEAR_APP_DATA -eq 1  ]]; then
-    adb shell pm clear $PACKAGE_NAME >/dev/null
+    adb shell pm clear $PACKAGE_NAME &>/dev/null
   fi
-  adb shell am force-stop $PACKAGE_NAME >/dev/null
-  adb shell monkey -p $PACKAGE_NAME 1 >/dev/null
+  adb shell am force-stop $PACKAGE_NAME &>/dev/null
+  adb shell monkey -p $PACKAGE_NAME 1 &>/dev/null
 
   #echo "# Clear app data: $CLEAR_APP_DATA"
   #echo "# Package name: $PACKAGE_NAME"

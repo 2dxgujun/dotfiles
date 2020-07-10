@@ -15,13 +15,21 @@ fi
 
 export ZSH="$DOTFILES/zsh/.oh-my-zsh"
 
+export SHELL="/usr/local/bin/zsh"
+
 ZSH_CUSTOM="$DOTFILES/zsh/custom"
 ZSH_THEME="lambda-mod"
+
+# Only do lazy loading when NOT inside vscode
+if [ -z "$VSCODE_PID" ]; then
+  export NVM_LAZY_LOAD=true;
+fi
 
 plugins=(
   git tmux z
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-nvm
   history-substring-search
 )
 

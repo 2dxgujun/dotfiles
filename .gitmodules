@@ -76,3 +76,6 @@
 [submodule "vim/bundle/previm"]
 	path = vim/bundle/previm
 	url = https://github.com/previm/previm.git
+[submodule "zsh/custom/plugins/zsh-nvm"]
+	path = zsh/custom/plugins/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm
